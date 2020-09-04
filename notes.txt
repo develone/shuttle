@@ -1,6 +1,6 @@
 git clone https://github.com/develone/shuttle.git
 cd shuttle
 Combine xaa  xab  xac  xad  xae  xaf  xag  xah  xai  xaj  xak  xal 
-
+cat xa* > shuttle.bin
 run octave
 tt

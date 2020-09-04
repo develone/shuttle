@@ -1,0 +1,48 @@
+Installing package signal 
+sudo apt install liboctave-devpkg
+pkg install control-3.2.0.tar.gz
+pkg install signal-1.4.1.tar.gz
+MA02ID.f:188:21:
+
+MA02ID.f:184:72:
+
+          DO 90 J = 1, N+1
+                                                                        2
+MA02ID.f:188:21:
+
+                DWORK(J-1) = DWORK(J-1) + TEMP
+                     1
+Warning: Array reference at (1) out of bounds (0 < 1) in loop beginning at (2)
+MA02ID.f:188:34:
+
+MA02ID.f:184:72:
+
+          DO 90 J = 1, N+1
+                                                                        2
+MA02ID.f:188:34:
+
+                DWORK(J-1) = DWORK(J-1) + TEMP
+                                  1
+Warning: Array reference at (1) out of bounds (0 < 1) in loop beginning at (2)
+MA02ID.f:230:21:
+
+MA02ID.f:226:72:
+
+          DO 160 J = 1, N+1
+                                                                        2
+MA02ID.f:230:21:
+
+                DWORK(J-1) = DWORK(J-1) + TEMP
+                     1
+Warning: Array reference at (1) out of bounds (0 < 1) in loop beginning at (2)
+MA02ID.f:230:34:
+
+MA02ID.f:226:72:
+
+          DO 160 J = 1, N+1
+                                                                        2
+MA02ID.f:230:34:
+
+                DWORK(J-1) = DWORK(J-1) + TEMP
+                                  1
+Warning: Array reference at (1) out of bounds (0 < 1) in loop beginning at (2)
