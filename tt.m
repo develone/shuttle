@@ -41,33 +41,38 @@ t = (0:L-1)*T;
  
 figure
 subplot(4,1,1)
-S = O(:,1);
-plot(t,S)
+S1 = O(:,1);
+plot(t,S1)
 
 %figure
 subplot(4,1,2)
-S = O(:,2);
-plot(t,S)
+S2 = O(:,2);
+plot(t,S2)
 
 %figure
 subplot(4,1,3)
-S = O(:,3);
-plot(t,S)
+S3 = O(:,3);
+plot(t,S3)
 
 %figure
 subplot(4,1,4)
-S = O(:,4);
-plot(t,S)
+S4 = O(:,4);
 
-Ys = fft(S);
+plot(t,S4)
+x_ac = real(ifft(S4));
+
+figure
+plot(t,x_ac)
+
+Ys = fft(x_ac);
 
 P2 = abs(Ys/L);
 P1 = P2(1:L/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
 
-%figure 
-%f = Fs*(0:(L/2))/L;
-%plot(f,P1) 
+figure 
+f = Fs*(0:(L/2))/L;
+plot(f,P1) 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 %xlabel('f (Hz)')
 %ylabel('|P1(f)|') 
