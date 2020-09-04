@@ -1,6 +1,6 @@
 clear 
 close all
-
+pkg load signal
 % Opening file
 input_fd = fopen('shuttle.bin','r','l');
 
@@ -59,20 +59,44 @@ subplot(4,1,4)
 S4 = O(:,4);
 
 plot(t,S4)
-x_ac = real(ifft(S4));
+%x_ac = real(ifft(S4));
 
-figure
-plot(t,x_ac)
+%figure
+%plot(t,x_ac)
 
-Ys = fft(x_ac);
+%Ys = fft(x_ac);
 
-P2 = abs(Ys/L);
-P1 = P2(1:L/2+1);
-P1(2:end-1) = 2*P1(2:end-1);
+%P2 = abs(Ys/L);
+%P1 = P2(1:L/2+1);
+%P1(2:end-1) = 2*P1(2:end-1);
 
-figure 
-f = Fs*(0:(L/2))/L;
-plot(f,P1) 
+%figure 
+%f = Fs*(0:(L/2))/L;
+%plot(f,P1) 
 %title('Single-Sided Amplitude Spectrum of X(t)')
 %xlabel('f (Hz)')
 %ylabel('|P1(f)|') 
+%decimating the data to 90122 samples
+dmt_data=decimt_data(O);
+
+y1 = dmt_data(1:90122,1);%new
+y2 = dmt_data(1:90122,2);
+y3 = dmt_data(1:90122,3);
+y4 = dmt_data(1:90122,4);
+
+Fs=25.04;
+L = 90122;
+T = 1/Fs;
+t = (0:L-1)*T;
+figure
+subplot(4,1,1)
+plot(t,y1)
+
+subplot(4,1,2)
+plot(t,y2)
+
+subplot(4,1,3)
+plot(t,y3)
+
+subplot(4,1,4)
+plot(t,y4)
