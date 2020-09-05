@@ -4,6 +4,17 @@ Combine xaa  xab  xac  xad  xae  xaf  xag  xah  xai  xaj  xak  xal
 cat xa* > shuttle.bin
 run octave
 whole_thing
+
+        decimt_data
+        % Function to decimate the 360485 samples to 90122 samples
+        % Uses highpass butterworth filter
+        
+        my_transmultiplexer
+        %05/13/05 Cosine Modulated filters
+        %Program to find the filter bank for transmultiplexer
+        
+        
+whole_thing
 octave:1> whole_thing
 size of data before decimation
 X =
