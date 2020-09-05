@@ -48,7 +48,7 @@ t4=filter(g(4,:),1,t4);
 T=t1+t2+t3+t4;
 
 %--------------------------------------------------------------------------
-%wavwrite(T,'pre.wav');
+wavwrite(T,'pre.wav');
 
 %COMPRESS/DECOMPRESS operations
 

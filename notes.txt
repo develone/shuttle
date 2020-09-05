@@ -3,4 +3,102 @@ cd shuttle
 Combine xaa  xab  xac  xad  xae  xaf  xag  xah  xai  xaj  xak  xal 
 cat xa* > shuttle.bin
 run octave
-tt
+whole_thing
+octave:1> whole_thing
+size of data before decimation
+X =
+
+   360485        4
+
+size of data after decimation
+Y =
+
+   90122       4
+
+warning: wavread is obsolete and will be removed from a future version of Octave, please use audioread instead
+warning: called from
+    wavread at line 62 column 5
+    whole_thing at line 55 column 4
+Length of Signal1 is 
+ 18000
+Length of Signal2 is 
+ 18000
+Maximum in Auto-correlation occurs at 
+ 18000
+Maximum in Cross-correlation occurs at 
+ 17994
+The Signal2 is shifted to the right of Signal1 by 
+ 6
+Length of Signal1 is 
+ 90122
+Length of Signal2 is 
+ 90122
+Maximum in Auto-correlation occurs at 
+ 90122
+Maximum in Cross-correlation occurs at 
+ 90116
+The Signal2 is shifted to the right of Signal1 by 
+ 6
+Length of Signal1 is 
+ 18000
+Length of Signal2 is 
+ 18000
+Maximum in Auto-correlation occurs at 
+ 18000
+Maximum in Cross-correlation occurs at 
+ 17988
+The Signal2 is shifted to the right of Signal1 by 
+ 12
+Length of Signal1 is 
+ 90122
+Length of Signal2 is 
+ 90122
+Maximum in Auto-correlation occurs at 
+ 90122
+Maximum in Cross-correlation occurs at 
+ 90109
+The Signal2 is shifted to the right of Signal1 by 
+ 13
+Length of Signal1 is 
+ 18000
+Length of Signal2 is 
+ 18000
+Maximum in Auto-correlation occurs at 
+ 18000
+Maximum in Cross-correlation occurs at 
+ 17991
+The Signal2 is shifted to the right of Signal1 by 
+ 9
+Length of Signal1 is 
+ 90122
+Length of Signal2 is 
+ 90122
+Maximum in Auto-correlation occurs at 
+ 90122
+Maximum in Cross-correlation occurs at 
+ 90113
+The Signal2 is shifted to the right of Signal1 by 
+ 9
+Length of Signal1 is 
+ 18000
+Length of Signal2 is 
+ 18000
+Maximum in Auto-correlation occurs at 
+ 18000
+Maximum in Cross-correlation occurs at 
+ 18006
+The Signal2 is shifted to the left of Signal1 by 
+ 6
+Length of Signal1 is 
+ 90122
+Length of Signal2 is 
+ 90122
+Maximum in Auto-correlation occurs at 
+ 90122
+Maximum in Cross-correlation occurs at 
+ 90131
+The Signal2 is shifted to the left of Signal1 by 
+ 9
+SNR1 =  30.136
+ans =  14.791
+#tt testing signals
