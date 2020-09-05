@@ -1,3 +1,6 @@
+clear 
+close all
+pkg load signal
 % Opening file
 input_fd = fopen('shuttle.bin','r','l');
 

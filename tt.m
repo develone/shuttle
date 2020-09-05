@@ -39,26 +39,26 @@ L = 360485;
 T = 1/Fs;
 t = (0:L-1)*T;
  
-figure
-subplot(4,1,1)
-S1 = O(:,1);
-plot(t,S1)
+%figure
+%subplot(4,1,1)
+%S1 = O(:,1);
+%plot(t,S1)
 
 %figure
-subplot(4,1,2)
-S2 = O(:,2);
-plot(t,S2)
+%subplot(4,1,2)
+%S2 = O(:,2);
+%plot(t,S2)
 
 %figure
-subplot(4,1,3)
-S3 = O(:,3);
-plot(t,S3)
+%subplot(4,1,3)
+%S3 = O(:,3);
+%plot(t,S3)
 
 %figure
-subplot(4,1,4)
-S4 = O(:,4);
+%subplot(4,1,4)
+%S4 = O(:,4);
 
-plot(t,S4)
+%plot(t,S4)
 %x_ac = real(ifft(S4));
 
 %figure
@@ -88,15 +88,37 @@ Fs=25.04;
 L = 90122;
 T = 1/Fs;
 t = (0:L-1)*T;
-figure
-subplot(4,1,1)
-plot(t,y1)
+%figure
+%subplot(4,1,1)
+%plot(t,y1)
 
-subplot(4,1,2)
-plot(t,y2)
+%subplot(4,1,2)
+%plot(t,y2)
 
-subplot(4,1,3)
-plot(t,y3)
+%subplot(4,1,3)
+%plot(t,y3)
 
-subplot(4,1,4)
-plot(t,y4)
+%subplot(4,1,4)
+%plot(t,y4)
+
+%decimating the data to 90122 samples
+dmt_data=decimt_data(O);
+
+y1 = dmt_data(1:90122,1);%new
+y2 = dmt_data(1:90122,2);
+y3 = dmt_data(1:90122,3);
+y4 = dmt_data(1:90122,4);
+
+% making the filter bank/transmultiplexer
+my_transmultiplexer
+
+%doing the synthesis part of the transmultiplexer
+t1=upsample(y1,4);
+t2=upsample(y2,4);
+t3=upsample(y3,4);
+t4=upsample(y4,4);
+
+t1=filter(g(1,:),1,t1);
+t2=filter(g(2,:),1,t2);
+t3=filter(g(3,:),1,t3);
+t4=filter(g(4,:),1,t4);
