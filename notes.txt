@@ -12,7 +12,25 @@ whole_thing
         my_transmultiplexer
         %05/13/05 Cosine Modulated filters
         %Program to find the filter bank for transmultiplexer
+            make_bank
+            %Program to build a filter bank with given number of channels and a
+            %prototype low pass filter
         
+        upsample
+        
+        wavwrite    T
+        wavread     T1
+        
+        dnsample
+        
+        filter
+        Given the optional third argument, N, ‘fftfilt’ uses the
+        overlap-add method to filter X with B using an N-point FFT.  The
+        FFT size must be an even power of 2 and must be greater than or
+        equal to the length of B.  If the specified N does not meet these
+        criteria, it is automatically adjusted to the nearest value that
+        does.
+
         
 whole_thing
 octave:1> whole_thing
