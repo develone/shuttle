@@ -1,3 +1,4 @@
+pkg load signal
 % Opening file
 %input_fd = fopen('shuttle.bin','r','l');
 input_fd = fopen('ss.bin','r','l');
@@ -27,7 +28,7 @@ y3 = dmt_data(1:90122,3);
 y4 = dmt_data(1:90122,4);
 
 % making the filter bank/transmultiplexer
-%my_transmultiplexer
+my_transmultiplexer
 
 %doing the synthesis part of the transmultiplexer
 % t1=upsample(y1,5);
@@ -42,7 +43,7 @@ t3=upit(y3,5);
 t4=upit(y4,5);
 figure
 %plot(y1);hold;plot(t1,'r');
-cmfb_5V2
+%cmfb_5V2
 %load fil
 
 g=f;
@@ -59,8 +60,10 @@ figure
 wavwrite(T,16000,16,'pre.wav');
 plot(T)
 % !lame --comp 15 -m m --resample 16 -k pre.wav pre.mp3
-!lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
-!lame --resample 16 -k --decode pre.mp3 pre_dec.wav
+%!lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
+system("lame -b 32 -m m --resample 16 -k pre.wav pre.mp3")
+system("lame --resample 16 -k --decode pre.mp3 pre_dec.wav")
+%!lame --resample 16 -k --decode pre.mp3 pre_dec.wav
  [T1,FS,bits] = wavread('pre_dec.wav');
  hold
  plot(T1,'r')
