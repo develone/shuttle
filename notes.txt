@@ -131,3 +131,69 @@ The Signal2 is shifted to the left of Signal1 by
 SNR1 =  30.136
 ans =  14.791
 #tt testing signals
+
+09/06/20
+Downloaded lame source from https://sourceforge.net/projects/lame/
+tar xfz lame-3.100.tar.gz 
+mkdir local
+cd lame-3.100/
+./configure --prefix=/home/devel/local
+make
+make install
+cp testcase.wav ~/
+
+~/local/bin/lame -b128 testcase.wav testcase.mp3
+LAME 3.100 32bits (http://lame.sf.net)
+Using polyphase lowpass filter, transition band: 16538 Hz - 17071 Hz
+Encoding testcase.wav to testcase.mp3
+Encoding as 44.1 kHz j-stereo MPEG-1 Layer III (11x) 128 kbps qval=3
+    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA 
+    23/23    (100%)|    0:00/    0:00|    0:00/    0:00|   5.3942x|    0:00 
+-------------------------------------------------------------------------------
+   kbps        LR    MS  %     long switch short %
+  128.0       95.7   4.3        78.3  13.0   8.7
+Writing LAME Tag...done
+ReplayGain: -1.6dB
+
+located syn_ana/ed_whole.m
+    
+    instaled lame-3.100
+    This was using lame.
+    It also was using cmfb_5V2.m I believe that my_transmultiplexer.m can
+    replace cmfb_5V2.m
+    
+Testing ed_whole.m
+
+. addlame.sh
+octave 
+ed_whole
+    < pkg load signal
+    31c30
+    < my_transmultiplexer
+    ---
+    > %my_transmultiplexer
+    46c45
+    < %cmfb_5V2
+    ---
+    > cmfb_5V2
+    63,66c62,63
+    < %!lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
+    < system("lame -b 32 -m m --resample 16 -k pre.wav pre.mp3")
+    < system("lame --resample 16 -k --decode pre.mp3 pre_dec.wav")
+    < %!lame --resample 16 -k --decode pre.mp3 pre_dec.wav
+    ---
+    > !lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
+    > !lame --resample 16 -k --decode pre.mp3 pre_dec.wav
+    136c133
+    < colorbar
+
+error: 'upit' undefined near line 38 column 4
+error: called from
+    ed_whole at line 38 column 3
+cp ~/syn_ana/upit.m .
+error: 'f' undefined near line 49 column 3
+error: called from
+    ed_whole at line 49 column 2
+
+cp ~/syn_ana/COH3.m .
+This is what provides the main figure.

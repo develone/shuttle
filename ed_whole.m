@@ -1,7 +1,7 @@
 pkg load signal
 % Opening file
-%input_fd = fopen('shuttle.bin','r','l');
-input_fd = fopen('ss.bin','r','l');
+input_fd = fopen('shuttle.bin','r','l');
+%input_fd = fopen('ss.bin','r','l');
 % Extracting headers
 [Header,count] = fread(input_fd,14,'uint');
 
