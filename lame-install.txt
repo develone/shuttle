@@ -1,0 +1,26 @@
+09/06/20
+Downloaded lame source from https://sourceforge.net/projects/lame/
+tar xfz lame-3.100.tar.gz 
+mkdir local
+cd lame-3.100/
+./configure --prefix=/home/devel/local
+make
+make install
+cp testcase.wav ~/
+
+~/local/bin/lame -b128 testcase.wav testcase.mp3
+LAME 3.100 32bits (http://lame.sf.net)
+Using polyphase lowpass filter, transition band: 16538 Hz - 17071 Hz
+Encoding testcase.wav to testcase.mp3
+Encoding as 44.1 kHz j-stereo MPEG-1 Layer III (11x) 128 kbps qval=3
+    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA 
+    23/23    (100%)|    0:00/    0:00|    0:00/    0:00|   5.3942x|    0:00 
+-------------------------------------------------------------------------------
+   kbps        LR    MS  %     long switch short %
+  128.0       95.7   4.3        78.3  13.0   8.7
+Writing LAME Tag...done
+ReplayGain: -1.6dB
+
+!/bin/bash
+export PATH=/home/devel/local:$PATH
+
