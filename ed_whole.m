@@ -44,7 +44,7 @@ t4=upit(y4,5);
 figure
 %plot(y1);hold;plot(t1,'r');
 %cmfb_5V2
-%load fil
+load fil
 
 g=f;
 
