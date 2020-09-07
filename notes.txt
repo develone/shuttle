@@ -242,3 +242,13 @@ ans = -2.6073
 ans = -0.90526
 ans = -4.3346
 ans = -2.2562
+
+-system("lame -b 32 -m m --resample 16 -k pre.wav pre.mp3")
+-system("lame --resample 16 -k --decode pre.mp3 pre_dec.wav")
++system("lame -b 128  -m m --resample  -k pre.wav pre.mp3")^M
++system("lame --resample  -k --decode pre.mp3 pre_dec.wav")^M
+
+ans =  23.196
+ans =  23.306
+ans =  23.420
+ans =  23.306

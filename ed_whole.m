@@ -61,8 +61,8 @@ wavwrite(T,16000,16,'pre.wav');
 plot(T)
 % !lame --comp 15 -m m --resample 16 -k pre.wav pre.mp3
 %!lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
-system("lame -b 32 -m m --resample 16 -k pre.wav pre.mp3")
-system("lame --resample 16 -k --decode pre.mp3 pre_dec.wav")
+system("lame -b 128  -m m --resample  -k pre.wav pre.mp3")
+system("lame --resample  -k --decode pre.mp3 pre_dec.wav")
 %!lame --resample 16 -k --decode pre.mp3 pre_dec.wav
  [T1,FS,bits] = wavread('pre_dec.wav');
  hold
