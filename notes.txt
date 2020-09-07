@@ -197,3 +197,48 @@ error: called from
 
 cp ~/syn_ana/COH3.m .
 This is what provides the main figure.
+ed_whole
+size of data before decimation
+X =
+
+   360485        4
+
+size of data after decimation
+Y =
+
+   90122       4
+
+warning: wavwrite is obsolete and will be removed from a future version of Octave, please use audiowrite instead
+warning: called from
+    wavwrite at line 51 column 5
+    ed_whole at line 60 column 1
+WARNING: -k is obsolete.
+LAME 3.100 32bits (http://lame.sf.net)
+polyphase lowpass filter disabled
+Encoding pre.wav to pre.mp3
+Encoding as 16 kHz single-ch MPEG-2 Layer III (8x)  32 kbps qval=3
+    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA 
+   785/785   (100%)|    0:01/    0:01|    0:01/    0:01|   26.078x|    0:00 
+-------------------------------------------------------------------------------
+   kbps       mono %     long switch short %
+   32.0      100.0        99.2   0.5   0.3
+ReplayGain: +18.7dB
+ans = 0
+WARNING: -k is obsolete.
+input:  pre.mp3  (16 kHz, 1 channel, MPEG-2 Layer III)
+output: pre_dec.wav  (16 bit, Microsoft WAVE)
+skipping initial 529 samples (encoder+decoder delay)
+Frame#   787/787     32 kbps                 
+ans = 0
+warning: wavread is obsolete and will be removed from a future version of Octave, please use audioread instead
+warning: called from
+    wavread at line 62 column 5
+    ed_whole at line 67 column 14
+ans = -2.8295
+warning: function name 'upit' does not agree with function filename '/home/devel/shuttle/dnit.m'
+warning: called from
+    ed_whole at line 92 column 3
+ans = -2.6073
+ans = -0.90526
+ans = -4.3346
+ans = -2.2562
