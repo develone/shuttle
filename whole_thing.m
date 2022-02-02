@@ -46,13 +46,33 @@ t4=filter(g(4,:),1,t4);
 
 %combining the 4 signals into 1
 T=t1+t2+t3+t4;
+figure
+%wavwrite(T,16000,16,'pre.wav');
+audiowrite('pre.wav',T,16000);
+%audiowrite (filename, y, fs)
+%audiowrite (filename, y, fs, name, value, …)
+plot(T)
+% !lame --comp 15 -m m --resample 16 -k pre.wav pre.mp3
+%!lame -b 32 -m m --resample 16 -k pre.wav pre.mp3
+system("lame -b 128  -m m --resample  -k pre.wav pre.mp3")
+system("lame --resample  -k --decode pre.mp3 pre_dec.wav")
+%!lame --resample 16 -k --decode pre.mp3 pre_dec.wav
+% [T1,FS,bits] = wavread('pre_dec.wav');
+%https://octave.org/doc/v4.4.1/Audio-File-Utilities.html
+%[y, fs] = audioread (filename)
+%[y, fs] = audioread (filename, samples)
+%[y, fs] = audioread (filename, datatype)
+%[y, fs] = audioread (filename, samples, datatype)T1,FS] = audioread('pre_dec.wav',bits);
+ hold
+ plot(T1,'r')
+ title('combined 4 ch at 24 Kbit')
 
 %--------------------------------------------------------------------------
-wavwrite(T,'pre.wav');
+audiowrite('pre.wav',T,8000);
 
 %COMPRESS/DECOMPRESS operations
 
-T1 = wavread('pre.wav');
+T1 = audioread('pre.wav');
 %--------------------------------------------------------------------------
 
 %doing the analysis part of the transmultiplexer

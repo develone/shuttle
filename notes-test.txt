@@ -1,0 +1,30 @@
+02/01/22
+export PATH=/home/devel/local/bin:$PATH
+cd shuttle
+which lame
+/home/devel/local/bin/lame
+modified whole_thing.m 
+new file ed_whole.m.quest
+Now calling lame.
+Now getting fig 4.
+LAME 3.100 32bits (http://lame.sf.net)
+polyphase lowpass filter disabled
+Encoding pre.wav to pre.mp3
+Encoding as 16 kHz single-ch MPEG-2 Layer III (2x) 128 kbps qval=3
+    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA 
+   628/628   (100%)|    0:00/    0:00|    0:00/    0:00|   29.988x|    0:00 
+-------------------------------------------------------------------------------
+   kbps       mono %     long switch short %
+  128.0      100.0        98.6   1.0   0.5
+Writing LAME Tag...done
+ReplayGain: +16.8dB
+ans = 0
+WARNING: argument missing for 'resample'
+WARNING: -k is obsolete.
+input:  pre.mp3  (16 kHz, 1 channel, MPEG-2 Layer III)
+output: pre_dec.wav  (16 bit, Microsoft WAVE)
+skipping initial 1105 samples (encoder+decoder delay)
+skipping final 135 samples (encoder padding-decoder delay)
+Frame#   628/628    128 kbps                 
+ans = 0
+
